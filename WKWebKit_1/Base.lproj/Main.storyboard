@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mP2-Qg-WIe">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8fO-UB-KLc">
+                                <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                            </progressView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djN-Jw-bB3">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="Y1f-V6-3lA">
+                                        <connections>
+                                            <action selector="backAction:" destination="BYZ-38-t0r" id="HoE-Oj-lqE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Fur-C3-H0C"/>
+                                    <barButtonItem systemItem="fastForward" id="Vv1-td-OCe">
+                                        <connections>
+                                            <action selector="forwardAction:" destination="BYZ-38-t0r" id="Gvw-nD-g9w"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Cr1-vC-SeU"/>
+                                    <barButtonItem systemItem="stop" id="L1N-vv-b5d">
+                                        <connections>
+                                            <action selector="stopAction:" destination="BYZ-38-t0r" id="KM4-b7-cjN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="wl5-YS-ie8"/>
+                                    <barButtonItem systemItem="refresh" id="juI-wS-cKt">
+                                        <connections>
+                                            <action selector="refresh:" destination="BYZ-38-t0r" id="8z1-cY-PpP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="djN-Jw-bB3" secondAttribute="bottom" id="0fJ-9q-5bb"/>
+                            <constraint firstItem="8fO-UB-KLc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="a90-el-O4r"/>
+                            <constraint firstItem="djN-Jw-bB3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bWn-rc-XYH"/>
+                            <constraint firstItem="8fO-UB-KLc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iF1-58-aea"/>
+                            <constraint firstAttribute="trailing" secondItem="djN-Jw-bB3" secondAttribute="trailing" id="uad-lS-EE5"/>
+                            <constraint firstAttribute="trailing" secondItem="8fO-UB-KLc" secondAttribute="trailing" id="vfd-Ik-6rL"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bcI-lR-wsK">
+                        <barButtonItem key="rightBarButtonItem" title="菜单" id="Kb9-8m-csy">
+                            <connections>
+                                <action selector="showSub:" destination="BYZ-38-t0r" id="IiW-u8-pyL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backBtn" destination="Y1f-V6-3lA" id="Xzm-XW-jpj"/>
+                        <outlet property="cancelBtn" destination="L1N-vv-b5d" id="ISr-gV-nUZ"/>
+                        <outlet property="forwardBtn" destination="Vv1-td-OCe" id="2Cy-oU-Mf5"/>
+                        <outlet property="progressView" destination="8fO-UB-KLc" id="eek-cg-lpT"/>
+                        <outlet property="reloadBtn" destination="juI-wS-cKt" id="U5b-fO-fH3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="151"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bc9-0s-e1J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mP2-Qg-WIe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jv0-rW-E7a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nst-CF-a3m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RZG-77-C6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250" y="151"/>
+        </scene>
+    </scenes>
+</document>
