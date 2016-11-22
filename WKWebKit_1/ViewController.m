@@ -57,6 +57,13 @@
         webView.navigationDelegate = self;
         webView.UIDelegate = self;
         webView.allowsBackForwardNavigationGestures = YES;
+        
+        
+        //偏好设置
+        WKPreferences *preferences = [[WKPreferences alloc] init];
+        preferences.javaScriptCanOpenWindowsAutomatically = YES;
+        preferences.minimumFontSize = 40.0;
+        config.preferences = preferences;
     }
     return self;
 }
