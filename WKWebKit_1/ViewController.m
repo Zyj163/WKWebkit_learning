@@ -38,11 +38,11 @@
         //隐藏菜单栏
         [config.userContentController addUserScript:[self javasciptObj:@"hideNavi"]];
         
-        //获取菜单栏(JS代码，向app发消息或调取app方法)
+        //获取菜单栏(JS代码，向app发消息或调取app方法，即这段代码是js文件中的，或者是注入到js文件中的)
         WKUserScript *s = [self javasciptObj:@"fetchMenus"];
         [config.userContentController addUserScript:s];
         
-        //注册回调(JS调app方法)
+        //注册messageHandlers回调(JS向app发消息) webkit.messageHandlers[didFetchMenus].postMessage(items)
         [config.userContentController addScriptMessageHandler:self name:@"didFetchMenus"];
         
         //添加cookie(也可以通过之前保存的config进行设置)
@@ -76,10 +76,10 @@
     [self.webView loadRequest:request];
     
     //app调JS方法
-    NSString *meta = @"document.getElement.innerHTML";
-    [self.webView evaluateJavaScript:meta completionHandler:^(id _Nullable returnObj, NSError * _Nullable error) {
-        NSLog(@"返回值:%@,错误:%@",returnObj, error);
-    }];
+//    NSString *meta = @"document.getElement.innerHTML";
+//    [self.webView evaluateJavaScript:meta completionHandler:^(id _Nullable returnObj, NSError * _Nullable error) {
+//        NSLog(@"返回值:%@,错误:%@",returnObj, error);
+//    }];
     
     //KVO
     [self.webView addObserver:self forKeyPath:@"loading" options:0x01 context:nil];
